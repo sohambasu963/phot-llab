@@ -65,14 +65,14 @@ export default function Home() {
           </button>
         )}
         {showSecondButton && (
-          <button
-            onClick={handleSecondButtonClick}
+          <a
+            href="/upload"
             style={{ 
-              backgroundColor: '#FF0000', 
+              backgroundColor: '#FFFFFF', 
               borderColor: 'black', 
               borderWidth: '6px', 
               borderStyle: 'solid', 
-              color: '#FFFFFF', 
+              color: '#FF0000', 
               marginTop: '10px',
               position: 'absolute',
               top: '50%', 
@@ -81,7 +81,7 @@ export default function Home() {
             }}
           >
             SORRRY! Only one entry per person
-          </button>
+          </a>
         )}
       </div>
     </div>
