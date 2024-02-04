@@ -7,6 +7,7 @@ export default function UploadPage() {
   const [showUploadInput, setShowUploadInput] = useState(false);
 
   const handleDownloadClick = () => {
+    
     const newClickCount = downloadClickCount + 1;
     setDownloadClickCount(newClickCount);
 
