@@ -48,10 +48,10 @@ export default function UploadPage() {
       <div className="absolute" style={{ top: '40%', left: '40%' }}>
         <div className="flex flex-row space-x-8 items-start">
           <button className="bg-[#FF0000] text-white">
-            <h1 className="text-6xl">Upload</h1>
+            <h1 className="text-6xl uppercase">Upload</h1>
           </button>
           <button onClick={handleDownloadClick} style={{ marginTop: `${buttonTopMargin}px` }}>
-            <h1 className="text-sm">Download</h1>
+            <h1 className="text-sm">download</h1>
           </button>
         </div>
         {showUploadInput && (

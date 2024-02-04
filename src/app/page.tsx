@@ -67,6 +67,7 @@ export default function Home() {
         {showSecondButton && (
           <a
             href="/upload"
+            className="text-6xl uppercase"
             style={{ 
               backgroundColor: '#FFFFFF', 
               borderColor: 'black', 
