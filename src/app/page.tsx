@@ -2,24 +2,30 @@
 import React, { useState } from 'react';
 
 export default function Home() {
-
+  const [clickCount, setClickCount] = useState(0);
   const [showFirstButton, setShowFirstButton] = useState(true);
   const [showSecondButton, setShowSecondButton] = useState(false);
+  const [buttonPosition, setButtonPosition] = useState({ top: '50%', left: '50%' });
 
   const handleFirstButtonClick = () => {
     console.log("First button clicked");
-    setTimeout(() => {
+    setClickCount(prevCount => prevCount + 1);
+
+    const newTop = Math.random() * 80 + '%';
+    const newLeft = Math.random() * 80 + '%';
+    setButtonPosition({ top: newTop, left: newLeft });
+
+    if (clickCount >= 2) {
       setShowFirstButton(false);
-    }, 2000);
-    setTimeout(() => {
-      setShowSecondButton(true);
-    }, 4000);
+      setTimeout(() => {
+        setShowSecondButton(true);
+      }, 1000);
+    }
   };
 
   const handleSecondButtonClick = () => {
     console.log("Second button clicked");
   };
-
 
   return (
     <div className="h-screen bg-black" style={{ 
@@ -27,8 +33,8 @@ export default function Home() {
       color: '#00FF00', 
       fontFamily: 'Comic Sans MS',
       display: 'flex',
+      position: 'relative', // Needed for absolute positioning of children
     }}>
-      {/* <a href="/test">Test</a> */}
       <h1 className="text-5xl" style={{
         transform: 'rotate(79deg)',
         position: 'relative',
@@ -42,7 +48,18 @@ export default function Home() {
         {showFirstButton && (
           <button
             onClick={handleFirstButtonClick}
-            style={{ backgroundColor: '#FF0000', borderColor: 'black', borderWidth: '6px', borderStyle: 'solid', color: '#FFFFFF', marginTop: '10px' }}
+            style={{ 
+              backgroundColor: '#FF0000', 
+              borderColor: 'black', 
+              borderWidth: '6px', 
+              borderStyle: 'solid', 
+              color: '#FFFFFF', 
+              marginTop: '10px',
+              position: 'absolute',
+              top: buttonPosition.top,
+              left: buttonPosition.left,
+              transform: 'translate(-50%, -50%)' // Center the button at the new position
+            }}
           >
             Click HERE
           </button>
@@ -50,14 +67,22 @@ export default function Home() {
         {showSecondButton && (
           <button
             onClick={handleSecondButtonClick}
-            style={{ backgroundColor: '#FF0000', borderColor: 'black', borderWidth: '6px', borderStyle: 'solid', color: '#FFFFFF', marginTop: '10px' }}
+            style={{ 
+              backgroundColor: '#FF0000', 
+              borderColor: 'black', 
+              borderWidth: '6px', 
+              borderStyle: 'solid', 
+              color: '#FFFFFF', 
+              marginTop: '10px',
+              position: 'absolute',
+              top: '50%', 
+              left: '50%',
+              transform: 'translate(-50%, -50%)'
+            }}
           >
             SORRRY! Only one entry per person
           </button>
         )}
-      </div>
-      <div className="flex flex-col items-center justify-center">
-      
       </div>
     </div>
   );
