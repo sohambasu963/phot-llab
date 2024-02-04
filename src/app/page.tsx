@@ -35,6 +35,7 @@ export default function Home() {
       display: 'flex',
       position: 'relative', // Needed for absolute positioning of children
     }}>
+      <p className="absolute top-7 left-0">...a creative collaboration between Tiff, Angela, Soham.</p>
       <h1 className="text-5xl" style={{
         transform: 'rotate(79deg)',
         position: 'relative',
