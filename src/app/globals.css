@@ -23,3 +23,10 @@
 body {
   cursor: url('../../public/images/cursor.svg'), auto;
 }
+
+@font-face {
+  font-family: "Futura Book font";
+  src: url("../../public/fonts/futur.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}

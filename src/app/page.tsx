@@ -59,7 +59,7 @@ export default function Home() {
               position: 'absolute',
               top: buttonPosition.top,
               left: buttonPosition.left,
-              transform: 'translate(-50%, -50%)' // Center the button at the new position
+              transform: 'translate(-50%, -50%)'
             }}
           >
             Click HERE
